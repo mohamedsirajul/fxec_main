@@ -83,9 +83,23 @@ main .info-data .card {
 }
 main .card .head {
 	display: flex;
+	flex-direction: column;
 	justify-content: space-between;
-	align-items: flex-start;
 }
+@media (max-width: 530px) {
+    .head {
+        flex-direction: column;
+    }
+	.example-full-width{
+		width: 100%;
+	}
+}
+
+
+
+
+
+
 main .card .head h2 {
 	font-size: 24px;
 	font-weight: 600;
@@ -220,8 +234,13 @@ main .chat-box .day span {
 	font-size: 12px;
 	font-weight: 600;
 }
+// .examples-full-width{
+// 	width: 100%;
+// }
 .example-full-width{
 	width: 100%;
+	margin-left: 10px;
+	flex-direction: column;
 }
 main .chat-box .msg img {
 	width: 28px;
@@ -316,9 +335,12 @@ main .btn-send:hover {
 
 
 
-input[type="file"]{
-	visibility: hidden;
-  }
+// input[type="file"]{
+// 	visibility: hidden;
+//   }
+.inp{
+		visibility: hidden;
+}
   
   .image-preview{
 	height: 5rem;

@@ -30,9 +30,6 @@
 				<div class="content-data">
 					<div class="head">
 						<h3>Report Generator</h3>
-
-
-	
 						<!-- <div class="menu">
 							<i class='bx bx-dots-horizontal-rounded icon'></i>
 							<ul class="menu-link">
@@ -44,7 +41,7 @@
 					</div>
 					<mat-form-field class="example-full-width" appearance="outline">
 						<mat-label>Generate Report</mat-label>
-						<textarea matInput placeholder="Generate Your Report"></textarea>
+						<textarea matInput placeholder="Generate Your Report" [(ngModel)]="generateReport"></textarea>
 					  </mat-form-field>
 	
 					  <!-- <input #Image type="file" (change)="handleFileInput($event.target.files)"/>
@@ -57,29 +54,126 @@
 							
 						  Pick Image
 						</button>
-						<input type="file" #filePicker (change)="onImagePicked($event)" />
+						<input class="inp" type="file" #filePicker (change)="onImagePicked($event)" />
 					  </div>
 					  
 					  <!-- <div class="image-preview" *ngIf="imagePreview !== '' && imagePreview"> -->
 					  <div class="image-preview" *ngFor="let img of base64ImgArray; let i = index">
-						<img [src]="img" />                         
+						<img [src]="img" />                        
+						<!-- width="300" height="234"  -->
 						<button
 						  *ngIf="base64ImgArray.length > 0"
 						  (click)="removeImage(i)"
 						  class="btn btn-danger btn-sm"
 						  style="border-radius:50%"
 						>
-						  
+						  X
 						</button>
 						<br />
 					  </div>
 					  	<br>
 						<br>
 						<br>
-					  <button mat-raised-button id="generatereport" color="warn" class="btn btn-warning" type="button">
+						
+						<div class="head" >
+							<mat-form-field class="example-full-width">
+								<mat-label>Guest Name</mat-label>
+								<input matInput [(ngModel)]="guestName">
+							</mat-form-field>
+				
+							  <mat-form-field class="example-full-width">
+								<mat-label>Guest Designation
+								</mat-label>
+								<input matInput [(ngModel)]="guest_designation">
+							</mat-form-field>
+
+						</div>
+
+						<div class="head" >
+							<mat-form-field appearance="outline" class="example-full-width">
+								<mat-label>Event Date</mat-label>
+								<input matInput [matDatepicker]="start" (dateInput)="EventDate($event)" [max]="getFormattedDate(today)" />
+								<mat-datepicker-toggle matSuffix [for]="start"></mat-datepicker-toggle>
+								<mat-datepicker #start></mat-datepicker>
+							  </mat-form-field>
+
+							<mat-form-field class="example-full-width">
+								<mat-label>Activity Code</mat-label>
+								<input matInput [(ngModel)]="activityCode">
+							</mat-form-field>
+				
+						</div>
+
+						<div class="head" >
+							<mat-form-field class="example-full-width">
+								<mat-label>Year</mat-label>
+								<input matInput [(ngModel)]="year">
+							</mat-form-field>
+
+							<mat-form-field class="example-full-width">
+								<mat-label>No Of Count</mat-label>
+								<input matInput [(ngModel)]="StudCount">
+							</mat-form-field>
+				
+						</div>
+
+						<div class="head" >
+							<mat-form-field class="example-full-width">
+								<mat-label>Organizer Dept
+								</mat-label>
+								<input matInput [(ngModel)]="Organizer_dept">
+							</mat-form-field>
+
+							<mat-form-field class="example-full-width">
+								<mat-label>Organizer Faculty Name
+								</mat-label>
+								<input matInput [(ngModel)]="Organizer_fac_name">
+							</mat-form-field>
+
+						</div>
+
+						<div class="head" >
+							<mat-form-field class="example-full-width">
+								<mat-label>Topic</mat-label>
+								<input matInput [(ngModel)]="Topic">
+							</mat-form-field>
+				
+						</div>
+					  <button mat-raised-button id="generatereport" (click)="generate_pdf()" color="warn" class="btn btn-warning" type="button">
 						Generate Report
 					  </button>
+
+					  <br>
+					  <br>
 					  
+					  <!-- <mat-form-field class="example-full-width">
+						<mat-label>Choose File Type
+						</mat-label>
+						<input matInput [(ngModel)]="choose_file_type">
+					 </mat-form-field> -->
+
+						<mat-form-field class="example-full-width" appearance="outline">
+						  <mat-label>Choose File Type</mat-label>
+						  <input type="text"
+								 placeholder="Choose File Type"
+								 matInput
+								 [(ngModel)]="choose_file_type"
+								 [formControl]="myControl"
+								 [matAutocomplete]="auto">
+						  <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+							<mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+							  {{option}}
+							</mat-option>
+						  </mat-autocomplete>
+						</mat-form-field>
+					  
+					  					  
+					  <!-- <input type="text" id="title" name="title" [(ngModel)]="surname"  [ngModelOptions]="{standalone: true}" required> -->
+
+					  <br>
+					  <input type="file" id="file" name="file" (change)="onFileChange($event)" required>
+
+
                 </div>
 
 <div class="content-data">
@@ -127,6 +221,9 @@
 			</div>
 		</main>
 
+		<button mat-raised-button id="generatereport" (click)="onSubmit()" color="warn" class="btn btn-warning" type="button">
+			Upload File
+		  </button>
 	<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 	<!-- <script src="dashboard.js"></script> -->
 </body>

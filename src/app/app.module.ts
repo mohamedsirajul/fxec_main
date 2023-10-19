@@ -15,6 +15,7 @@ import { MatFormFieldDefaultOptions, MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@ang
 import { MY_DATE_FORMATS_PROVIDER } from './service/my-date-formats';
 import { DashboardComponent } from './routes/dashboard/dashboard.component';
 // import { MatProgressButtonsModule } from 'mat-progress-buttons';
+import { DatePipe } from '@angular/common';
 
 
 
@@ -56,10 +57,12 @@ const appearance: MatFormFieldDefaultOptions = {
   ],
   providers: [{ 
     provide: HTTP_INTERCEPTORS, useClass: DefaultInterceptor, multi: true },
+    DatePipe,
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
       useValue: appearance
     },MY_DATE_FORMATS_PROVIDER],
   bootstrap: [AppComponent],
+  
 })
 export class AppModule {}

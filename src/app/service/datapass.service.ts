@@ -26,4 +26,9 @@ export class DatapassService {
 		console.log(prompt)
 		return this.httpClient.post<string>(this.apiUrl, { prompt });
 	  }
+
+	  uploadFile(file: File) {
+		console.log(file)
+		return this.httpClient.post<any>('https://zenanvibe.com/report_manager/upload.php', file);
+	  }
 }
