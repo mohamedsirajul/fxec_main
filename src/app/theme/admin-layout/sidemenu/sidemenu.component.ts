@@ -12,48 +12,94 @@ export class SidemenuComponent {
   // menus = this.menuService.getAll();
 
   menus = [
-      {
-        icon: "business",
-        name: "Sales",
-        state: "sales",
-        type: "link",
-      },
+      // {
+      //   icon: "business",
+      //   name: "Sales",
+      //   state: "sales",
+      //   type: "link",
+      // },
       {
         icon: "dashboard",
         name: "Dashboard",
         state: "dashboard",
         type: "link",
       },
+      // {
+      //   icon: "restaurant_menu",
+      //   name: "Menu",
+      //   state: "menu",
+      //   type: "link",
+      // },
       {
-        icon: "restaurant_menu",
-        name: "Menu",
-        state: "menu",
-        type: "link",
-      },
-      {
-        icon: "report",
-        name: "Reports",
-        state: "reports",
+        icon: "table_chart",
+        name: "Acadamic Schedule",
+        state: "acadamic_schedule",
         type: "sub",
         children: [
           {
-            name: "Sales Report",
-            state: "sales_report",
+            name: "First Year",
+            state: "first_year",
             type: "link",
           },
           {
-            name: "Product Report",
-            state: "product_report",
+            name: "Second Year",
+            state: "second_year",
+            type: "link",
+          },
+          {
+            name: "Prefinal Year",
+            state: "prefinal_year",
+            type: "link",
+          },
+          {
+            name: "Final Year",
+            state: "final_year",
             type: "link",
           },
         ],
       },
       {
-        icon: "settings",
-        name: "Settings",
-        state: "settings",
-        type: "link",
-      },    
+        icon: "insert_chart",
+        name: "CAT Analysis",
+        state: "cat_analysis",
+        type: "sub",
+        children: [
+          {
+            name: "Cat-1",
+            state: "cat1",
+            type: "link",
+          },
+          {
+            name: "Cat-2",
+            state: "cat2",
+            type: "link",
+          },
+        ],
+      },
+      {
+        icon: "insert_chart",
+        name: "E-Sem Analysis",
+        state: "esem_analysis",
+        type: "sub",
+        children: [
+          {
+            name: "Odd",
+            state: "odd",
+            type: "link",
+          },
+          {
+            name: "Even",
+            state: "even",
+            type: "link",
+          },
+        ],
+      },
+      // {
+      //   icon: "settings",
+      //   name: "Settings",
+      //   state: "settings",
+      //   type: "link",
+      // },    
   ]
 
   

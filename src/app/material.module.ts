@@ -47,6 +47,7 @@ import {MatTreeModule} from '@angular/material/tree';
 import {MatSelectFilterModule } from 'mat-select-filter';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
+
 @NgModule({
   exports: [
     A11yModule,
@@ -94,7 +95,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     ScrollingModule,
     MatSelectFilterModule,
     MatFormFieldModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
   ]
 })
 export class MaterialModule {

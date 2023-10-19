@@ -3,10 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { environment } from '@env/environment';
 
 import { AdminLayoutComponent } from '../theme/admin-layout/admin-layout.component';
-import { SettingComponent } from './setting/setting.component';
-import { SalesComponent } from './sales/sales/sales.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { MainComponent } from './menu/main/main.component';
+
 
 
 const routes: Routes = [
@@ -15,31 +13,41 @@ const routes: Routes = [
     component: AdminLayoutComponent,
     children: [
       { path: '', redirectTo: 'sales', pathMatch: 'full'},
-      {
-        path: 'sales',
-        component: SalesComponent,
-        data: { title: 'Sales', titleI18n: 'sales' },
-      },
+      // {
+      //   path: 'sales',
+      //   component: SalesComponent,
+      //   data: { title: 'Sales', titleI18n: 'sales' },
+      // },
       {
         path: 'dashboard',
         component: DashboardComponent,
         data: { title: 'Dashboard', titleI18n: 'dashboard' },
       },
+      // {
+      //   path: 'menu',
+      //   component: MainComponent,
+      //   data: { title: 'Menu', titleI18n: 'menu' },
+      // },
       {
-        path: 'menu',
-        component: MainComponent,
-        data: { title: 'Menu', titleI18n: 'menu' },
+        path: 'acadamic_schedule',
+        loadChildren: () => import('./acadamic_schedule/acadamic_schedule.module').then(m => m.Acadamic_scheduleModule),
+        data: { title: 'Acadamic_Schedule', titleI18n: 'acadamic_schedule'},
       },
       {
-        path: 'reports',
-        loadChildren: () => import('./report/reports.module').then(m => m.ReportModule),
-        data: { title: 'Reports', titleI18n: 'reports'},
+        path: 'cat_analysis',
+        loadChildren: () => import('./cat_analysis/cat_analysis.module').then(m => m.Cat_Analysis_scheduleModule),
+        data: { title: 'Cat_Analysis', titleI18n: 'cat_analysis'},
       },
       {
-        path: 'settings',
-        component: SettingComponent,
-        data: { title: 'Settings', titleI18n: 'settings' },
+        path: 'esem_analysis',
+        loadChildren: () => import('./E_sem_analysis/esem_analysis.module').then(m => m.Esem_analysis_scheduleModule),
+        data: { title: 'Esem_analysis', titleI18n: 'esem_analysis'},
       },
+      // {
+      //   path: 'settings',
+      //   component: SettingComponent,
+      //   data: { title: 'Settings', titleI18n: 'settings' },
+      // },
     ],
   },
 ];

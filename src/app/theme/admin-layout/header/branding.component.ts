@@ -5,9 +5,9 @@ import { Component, OnInit } from '@angular/core';
   template: `
     <a class="matero-branding" href="#/">
       <!-- <img src="{{ imageurl }}" class="matero-branding-logo-expanded" alt="logo" /> -->
-      <span class="matero-branding-name">Siraji Hotel</span>
-      <!-- <img *ngIf="!status" src="./assets/images/is_nv.png" class="matero-branding-logo-expanded" matTooltip="Not Verified" alt="logo" />
-      <img *ngIf="status"src="./assets/images/is_v.png" class="matero-branding-logo-expanded" matTooltip="Verified Business" alt="logo" /> -->
+      <span class="matero-branding-name">FX AI REPORT MANAGER</span>
+      <!-- <img  src="./assets/images/is_nv.png" class="matero-branding-logo-expanded" matTooltip="Not Verified" alt="logo" /> -->
+      <!-- <img *ngIf="status"src="./assets/images/is_v.png" class="matero-branding-logo-expanded" matTooltip="Verified Business" alt="logo" /> -->
     </a>
   `,
 })
