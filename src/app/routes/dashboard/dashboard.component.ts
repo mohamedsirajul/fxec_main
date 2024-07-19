@@ -53,11 +53,11 @@ export class DashboardComponent implements OnInit {
   @ViewChild('chatContainer') private chatContainerRef!: ElementRef;
   @ViewChild('inputBox') private inputBoxRef!: ElementRef;
 
-  myControl = new FormControl('');
   messages: any[] = [];
   message: string = '';
   generatedResponse: { response: string } | null = null;
   finalresponse: any;
+  myControl = new FormControl('');
   filteredOptions: Observable<string[]>;
 
   options: string[] = [
@@ -87,6 +87,7 @@ export class DashboardComponent implements OnInit {
   guest_designation : any 
   choose_file_type : any;
   year : any;
+  details: any;
 
   constructor(private http: HttpClient, private renderer: Renderer2, private openaiService: DatapassService,     
     private datePipe: DatePipe,
@@ -104,6 +105,37 @@ export class DashboardComponent implements OnInit {
       startWith(''),
       map(value => this._filter(value || '')),
     );
+
+    this.openaiService.getDetails().subscribe((result: any) => {
+      this.details = result;
+      console.log(this.details);
+
+      //filtered opt start
+      // for (let i = 0; i < this.details.length; i++) {
+      //   this.temp_name = this.details[i].Name;
+      // }
+
+      // this.filteredOption_dept = this.my_Control_dept.valueChanges.pipe(
+      //   startWith(''),
+      //   map((value2) => this._filter_dept(value2))
+      // );
+
+      //tables name call
+      // for (let i = 0; i < this.details.length; i++) {
+      //   this.staffs.push(this.details[i].Name);
+      // }
+
+      // for (let i = 0; i < this.details.length; i++) {
+      //   this.id.push(this.details[i].StaffID);
+      // }
+
+      // for (let i = 0; i < this.subdetails.length; i++) {
+      //   if (this.reg.indexOf(this.subdetails[i].regulations) === -1) {
+      //     this.reg.push(this.subdetails[i].regulations);
+      //   }
+      // }
+
+    });
 
   }
 

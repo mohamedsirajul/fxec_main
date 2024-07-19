@@ -24,76 +24,76 @@ export class SidemenuComponent {
         state: "dashboard",
         type: "link",
       },
-      // {
-      //   icon: "restaurant_menu",
-      //   name: "Menu",
-      //   state: "menu",
-      //   type: "link",
-      // },
       {
         icon: "table_chart",
         name: "Acadamic Schedule",
         state: "acadamic_schedule",
-        type: "sub",
-        children: [
-          {
-            name: "First Year",
-            state: "first_year",
-            type: "link",
-          },
-          {
-            name: "Second Year",
-            state: "second_year",
-            type: "link",
-          },
-          {
-            name: "Prefinal Year",
-            state: "prefinal_year",
-            type: "link",
-          },
-          {
-            name: "Final Year",
-            state: "final_year",
-            type: "link",
-          },
-        ],
+        type: "link",
       },
-      {
-        icon: "insert_chart",
-        name: "CAT Analysis",
-        state: "cat_analysis",
-        type: "sub",
-        children: [
-          {
-            name: "Cat-1",
-            state: "cat1",
-            type: "link",
-          },
-          {
-            name: "Cat-2",
-            state: "cat2",
-            type: "link",
-          },
-        ],
-      },
-      {
-        icon: "insert_chart",
-        name: "E-Sem Analysis",
-        state: "esem_analysis",
-        type: "sub",
-        children: [
-          {
-            name: "Odd",
-            state: "odd",
-            type: "link",
-          },
-          {
-            name: "Even",
-            state: "even",
-            type: "link",
-          },
-        ],
-      },
+      // {
+      //   icon: "table_chart",
+      //   name: "Acadamic Schedule",
+      //   state: "acadamic_schedule",
+      //   type: "sub",
+      //   children: [
+      //     {
+      //       name: "First Year",
+      //       state: "first_year",
+      //       type: "link",
+      //     },
+      //     {
+      //       name: "Second Year",
+      //       state: "second_year",
+      //       type: "link",
+      //     },
+      //     {
+      //       name: "Prefinal Year",
+      //       state: "prefinal_year",
+      //       type: "link",
+      //     },
+      //     {
+      //       name: "Final Year",
+      //       state: "final_year",
+      //       type: "link",
+      //     },
+      //   ],
+      // },
+      // {
+      //   icon: "insert_chart",
+      //   name: "CAT Analysis",
+      //   state: "cat_analysis",
+      //   type: "sub",
+      //   children: [
+      //     {
+      //       name: "Cat-1",
+      //       state: "cat1",
+      //       type: "link",
+      //     },
+      //     {
+      //       name: "Cat-2",
+      //       state: "cat2",
+      //       type: "link",
+      //     },
+      //   ],
+      // },
+      // {
+      //   icon: "insert_chart",
+      //   name: "E-Sem Analysis",
+      //   state: "esem_analysis",
+      //   type: "sub",
+      //   children: [
+      //     {
+      //       name: "Odd",
+      //       state: "odd",
+      //       type: "link",
+      //     },
+      //     {
+      //       name: "Even",
+      //       state: "even",
+      //       type: "link",
+      //     },
+      //   ],
+      // },
       // {
       //   icon: "settings",
       //   name: "Settings",

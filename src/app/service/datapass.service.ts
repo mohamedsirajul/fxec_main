@@ -31,4 +31,15 @@ export class DatapassService {
 		console.log(file)
 		return this.httpClient.post<any>('https://zenanvibe.com/report_manager/upload.php', file);
 	  }
+
+	  get_sales_result(sales_dates:any){
+		let salesresult = JSON.stringify(sales_dates)
+		console.log(salesresult);
+		return this.httpClient.post<any>(`https://zenanvibe.com/report_manager/retrieve.php`, salesresult);
+	}
+
+	baseUrl: string = 'https://zenanvibe.com/siraji_ttable_generator'
+	getDetails(){
+	  return this.httpClient.get<any>(this.baseUrl+'/get_staffs_data.php')
+	}
 }

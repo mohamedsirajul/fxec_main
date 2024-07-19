@@ -16,6 +16,7 @@ import { MY_DATE_FORMATS_PROVIDER } from './service/my-date-formats';
 import { DashboardComponent } from './routes/dashboard/dashboard.component';
 // import { MatProgressButtonsModule } from 'mat-progress-buttons';
 import { DatePipe } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -48,6 +49,7 @@ const appearance: MatFormFieldDefaultOptions = {
     SharedModule,
     ThemeModule,
     RoutesModule,
+    ReactiveFormsModule,
     JwtModule.forRoot({
       jwtOptionsProvider: {
         provide: JWT_OPTIONS,

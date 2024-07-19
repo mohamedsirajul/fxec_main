@@ -10,8 +10,8 @@ import { Component } from '@angular/core';
         alt="avatar"
         width="64"
       />
-      <h4 class="matero-user-panel-name">IconX Technologies</h4>
-      <h5 class="matero-user-panel-email">info@iconxtechnologies.in</h5>
+      <h4 class="matero-user-panel-name">Sirajii_hotel</h4>
+      <h5 class="matero-user-panel-email">info@sirajihotel.in</h5>
       <div class="matero-user-panel-icons">
         <a routerLink="/profile/overview" mat-icon-button>
           <mat-icon>account_circle</mat-icon>
